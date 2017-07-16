@@ -5,4 +5,10 @@
 
 <% if current_user %>
   <h1>Welcome <%= current_user.email %></h1>
+  <h1><%= link_to "Logout", login_path, method: :delete %></h1>
+  <button type="button" id="restaurant">Create Restaurant</button>
 <% end %>
+
+<div class="restaurants">
+<h1>Restaurants</h1>
+</div>
