@@ -8,6 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
+gem 'jquery-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -42,6 +43,7 @@ group :development, :test do
   gem 'pry'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'selenium-webdriver', '~> 2.53.4'
 end
 
 group :development do
