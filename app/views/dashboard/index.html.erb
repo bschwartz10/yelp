@@ -11,4 +11,12 @@
 
 <div class="restaurants">
 <h1>Restaurants</h1>
+<% @restaurants.each do |restaurant| %>
+  <p>Name: <%= restaurant.name %></p>
+  <p>Cuisine: <%= restaurant.cuisine %></p>
+  <p>City: <%= restaurant.city %></p>
+  <p>State: <%= restaurant.state %></p>
+  <p>Zip: <%= restaurant.zip %></p>
+  <p>Creator: <%= restaurant.user.email %></p></br>
+<% end %>
 </div>

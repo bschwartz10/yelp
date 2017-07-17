@@ -10,7 +10,7 @@ $(document).ready(function(){
 function createRestaurantForm() {
   $('#restaurant').click(function (event) {
     event.preventDefault()
-    $('.restaurants').append(
+    $('.restaurants').prepend(
       `<br><form> Name:<br> <input type="text" name="name"><br>
       Cusine:<br> <input type="text" name="cuisine"><br>
       City:<br> <input type="text" name="city"><br>
@@ -34,33 +34,5 @@ function createRestaurantForm() {
       state: state,
       zip: zip
     })
-
-// function createRestaurant() {
-//   $('.restaurants').on('click','.submit-restaurant', function(event) {
-//     event.preventDefault()
-//     const name = $('input[name="name"]').val()
-//     const cuisine = $('input[name="cuisine"]').val()
-//     const city = $('input[name="city"]').val()
-//     const state = $('input[name="state"]').val()
-//     const zip = $('input[name="zip"]').val()
-//
-//     $.ajax({
-//       type: "POST",
-//       url: `/restaurants`,
-//       dataType: "json",
-//       data: { restaurant: {
-//               name: name,
-//               cuisine: cuisine,
-//               city: city,
-//               state: state,
-//               zip: zip
-//           }
-//       },
-//       success: function(restaurantObject) {
-//         return new Restaurant(restaurantObject)
-//       }
-//     })
-//   })
-// }
 
 }

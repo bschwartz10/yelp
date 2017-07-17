@@ -7,14 +7,6 @@ function Restaurant(restaurant) {
   this.zip = restaurant.zip
 
   Restaurant.prototype.createRestaurant = function() {
-    // $('.restaurants').on('click','.submit-restaurant', function(event) {
-    //   event.preventDefault()
-    //   const name = $('input[name="name"]').val()
-    //   const cuisine = $('input[name="cuisine"]').val()
-    //   const city = $('input[name="city"]').val()
-    //   const state = $('input[name="state"]').val()
-    //   const zip = $('input[name="zip"]').val()
-
       $.ajax({
         type: "POST",
         url: `/restaurants`,
@@ -28,8 +20,22 @@ function Restaurant(restaurant) {
             }
         },
         success: function(restaurantObject) {
-          return new Restaurant(restaurantObject)
+          const restaurant = new Restaurant(restaurantObject)
+          restaurant.appendRestauantToPage()
+              $('input[name="name"]').val("")
+              $('input[name="cuisine"]').val("")
+              $('input[name="city"]').val("")
+              $('input[name="state"]').val("")
+              $('input[name="zip"]').val("")
         }
     })
   }
+  Restaurant.prototype.appendRestauantToPage = function() {
+    $('.restaurants').append(
+    `<h4>${this.name}</h4>
+    <p>${this.cuisine}</p>
+    <p>${this.city}</p>
+    <p>${this.state}</p>
+    <p>${this.zip}</p>`
+  )}
 }
